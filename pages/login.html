@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gradient-to-r from-sky-200 via-sky-300 to-sky-400 min-h-screen flex items-center justify-center text-gray-800 font-sans">
+    <!-- Kontainer utama -->
+    <div class="bg-white bg-opacity-70 rounded-2xl shadow-xl w-full max-w-2xl p-10 text-center backdrop-blur-md">
+      <h1 class="text-3xl font-bold mb-4 text-sky-800">Academic System</h1>
+      <p class="mb-8 text-gray-700">Silakan pilih jenis pengguna untuk login ke dalam sistem.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <button id="adminModalButton" data-modal-target="adminModal" data-modal-toggle="adminModal" class="bg-sky-500 hover:bg-sky-400 text-white rounded-xl p-6 flex flex-col items-center transition">
+          <div class="text-4xl mb-2">👨‍💼</div>
+          <div class="text-lg font-semibold">Admin</div>
+        </button>
+        <button id="mhsModalButton" data-modal-target="mahasiswaModal" data-modal-toggle="mahasiswaModal" class="bg-sky-500 hover:bg-sky-400 text-white rounded-xl p-6 flex flex-col items-center transition">
+          <div class="text-4xl mb-2">🎓</div>
+          <div class="text-lg font-semibold">Mahasiswa</div>
+        </button>
+        <button id="dosenModalButton" data-modal-target="dosenModal" data-modal-toggle="dosenModal" class="bg-sky-500 hover:bg-sky-400 text-white rounded-xl p-6 flex flex-col items-center transition">
+          <div class="text-4xl mb-2">👨‍🏫</div>
+          <div class="text-lg font-semibold">Dosen Wali</div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Admin Login -->
+    <div id="adminModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+      <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+        <!-- Modal content -->
+        <div class="relative p-4 bg-sky-100 rounded-lg shadow sm:p-5">
+          <!-- Modal header -->
+          <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b border-sky-300">
+            <h3 class="text-lg font-semibold text-sky-800">Login as Admin</h3>
+            <button type="button" class="text-sky-500 bg-transparent hover:bg-sky-200 hover:text-sky-700 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="adminModal">
+              <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <div class="space-y-4 md:space-y-6" action="#">
+            <div>
+              <label for="email" class="block mb-2 text-sm font-medium text-sky-800">Your email</label>
+              <input type="email" name="email" id="email" class="bg-sky-50 border border-sky-300 text-sky-800 rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5" placeholder="name@company.com" required="" />
+            </div>
+            <div>
+              <label for="password" class="block mb-2 text-sm font-medium text-sky-800">Password</label>
+              <input type="password" name="password" id="password" placeholder="••••••••" class="bg-sky-50 border border-sky-300 text-sky-800 rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5" required="" />
+            </div>
+            <div>
+              <a href="?menu=admin" class="mt-2">
+                <button  class="w-full text-white bg-sky-600 hover:bg-sky-700 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mahasiswa Login -->
+    <div id="mahasiswaModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+      <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+        <!-- Modal content -->
+        <div class="relative p-4 bg-sky-100 rounded-lg shadow sm:p-5">
+          <!-- Modal header -->
+          <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b border-sky-300">
+            <h3 class="text-lg font-semibold text-sky-800">Login as Mahasiswa</h3>
+            <button type="button" class="text-sky-500 bg-transparent hover:bg-sky-200 hover:text-sky-700 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="mahasiswaModal">
+              <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <div class="space-y-4 md:space-y-6" action="#">
+            <div>
+              <label for="nrp" class="block mb-2 text-sm font-medium text-sky-800">NRP</label>
+              <input type="nrp" name="nrp" id="nrp" class="bg-sky-50 border border-sky-300 text-sky-800 rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5" placeholder="2372099"/>
+            </div>
+            <div>
+              <label for="password" class="block mb-2 text-sm font-medium text-sky-800">Password</label>
+              <input type="password" name="password" id="password" placeholder="••••••••" class="bg-sky-50 border border-sky-300 text-sky-800 rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5">
+            </div>
+            <div>
+              <a href="?menu=mahasiswa" class="mt-2">
+                <button  class="w-full text-white bg-sky-600 hover:bg-sky-700 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dosen Login -->
+    <div id="dosenModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+      <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+        <!-- Modal content -->
+        <div class="relative p-4 bg-sky-100 rounded-lg shadow sm:p-5">
+          <!-- Modal header -->
+          <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b border-sky-300">
+            <h3 class="text-lg font-semibold text-sky-800">Login as Dosen Wali</h3>
+            <button type="button" class="text-sky-500 bg-transparent hover:bg-sky-200 hover:text-sky-700 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="dosenModal">
+              <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <div class="space-y-4 md:space-y-6" action="#">
+            <div>
+              <label for="email" class="block mb-2 text-sm font-medium text-sky-800">Your email</label>
+              <input type="email" name="email" id="email" class="bg-sky-50 border border-sky-300 text-sky-800 rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5" placeholder="name@company.com" required="" />
+            </div>
+            <div>
+              <label for="password" class="block mb-2 text-sm font-medium text-sky-800">Password</label>
+              <input type="password" name="password" id="password" placeholder="••••••••" class="bg-sky-50 border border-sky-300 text-sky-800 rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5" required="" />
+            </div>
+            <div>
+              <a href="?menu=dosen" class="mt-2">
+                <button  class="w-full text-white bg-sky-600 hover:bg-sky-700 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  </body>
+</html>
